@@ -1,25 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import api from '../api';
-import { PlusCircle, Briefcase, Plus } from 'lucide-react';
+import { PlusCircle, Briefcase, Plus, Search } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { Badge } from '../components/ui/Badge';
+import { toast } from 'sonner';
 
 const Projects = () => {
     const [projects, setProjects] = useState([]);
+    const [filteredProjects, setFilteredProjects] = useState([]);
     const [newProject, setNewProject] = useState({ name: '', description: '' });
     const [loading, setLoading] = useState(true);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         fetchProjects();
     }, []);
 
+    useEffect(() => {
+        const results = projects.filter(project =>
+            project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            project.required_skills.some(skill => skill.name.toLowerCase().includes(searchTerm.toLowerCase()))
+        );
+        setFilteredProjects(results);
+    }, [searchTerm, projects]);
+
     const fetchProjects = async () => {
         try {
             const response = await api.get('/projects/');
             setProjects(response.data);
+            setFilteredProjects(response.data);
         } catch (error) {
-            console.error('Error fetching projects:', error);
+            toast.error('Failed to fetch projects');
         } finally {
             setLoading(false);
         }
@@ -30,9 +43,10 @@ const Projects = () => {
         try {
             await api.post('/projects/', newProject);
             setNewProject({ name: '', description: '' });
+            toast.success('Project created successfully');
             fetchProjects();
         } catch (error) {
-            console.error('Error creating project:', error);
+            toast.error('Failed to create project');
         }
     };
 
@@ -41,18 +55,31 @@ const Projects = () => {
         if (!skill) return;
         try {
             await api.post(`/projects/${projectId}/skills?skill_name=${skill}`);
+            toast.success('Skill requirement added');
             fetchProjects();
         } catch (error) {
-            console.error('Error adding skill:', error);
+            toast.error('Failed to add skill requirement');
         }
     };
 
     return (
         <div className="space-y-8 animate-in fade-in duration-500">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                     <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Projects</h1>
                     <p className="text-slate-500 mt-1">Track active projects and their requirements.</p>
+                </div>
+                <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <Search className="h-5 w-5 text-slate-400" />
+                    </div>
+                    <input
+                        type="text"
+                        className="pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:w-64 sm:text-sm"
+                        placeholder="Search projects, skills..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
                 </div>
             </div>
 
@@ -101,8 +128,14 @@ const Projects = () => {
                 <div className="lg:col-span-2 grid grid-cols-1 gap-4">
                     {loading ? (
                         <div className="text-center py-12 text-slate-500">Loading projects...</div>
+                    ) : filteredProjects.length === 0 ? (
+                        <div className="text-center py-12 bg-white rounded-xl border border-dashed border-slate-300">
+                            <Briefcase className="mx-auto h-12 w-12 text-slate-300" />
+                            <h3 className="mt-2 text-sm font-medium text-slate-900">No projects found</h3>
+                            <p className="mt-1 text-sm text-slate-500">Try adjusting your search or create a new project.</p>
+                        </div>
                     ) : (
-                        projects.map((project) => (
+                        filteredProjects.map((project) => (
                             <Card key={project.id} className="hover:border-indigo-200 transition-colors">
                                 <CardContent className="p-5">
                                     <div className="flex items-start space-x-4">

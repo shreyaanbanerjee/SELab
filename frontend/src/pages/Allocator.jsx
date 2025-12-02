@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/Card'
 import { Button } from '../components/ui/Button';
 import { Badge } from '../components/ui/Badge';
 
+import { toast } from 'sonner';
+
 const Allocator = () => {
     const [projects, setProjects] = useState([]);
     const [selectedProject, setSelectedProject] = useState(null);
@@ -48,6 +50,7 @@ const Allocator = () => {
         }
     };
 
+
     const handleAllocate = async (personId) => {
         if (!selectedProject) return;
         try {
@@ -56,10 +59,14 @@ const Allocator = () => {
                 project_id: selectedProject.id,
                 effort_percentage: allocationEffort
             });
-            alert('Allocation successful!');
+            toast.success('Allocation successful!', {
+                description: `Allocated ${personId} to ${selectedProject.name}`
+            });
             fetchSuggestions(selectedProject.id);
         } catch (error) {
-            alert('Allocation failed: ' + (error.response?.data?.detail || error.message));
+            toast.error('Allocation failed', {
+                description: error.response?.data?.detail || error.message
+            });
         }
     };
 
