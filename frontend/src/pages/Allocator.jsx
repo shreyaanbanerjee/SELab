@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import api from '../api';
-import { BrainCircuit, CheckCircle, AlertCircle } from 'lucide-react';
+import { BrainCircuit, CheckCircle, AlertCircle, Sparkles } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/Card';
+import { Button } from '../components/ui/Button';
+import { Badge } from '../components/ui/Badge';
 
 const Allocator = () => {
     const [projects, setProjects] = useState([]);
@@ -54,93 +57,132 @@ const Allocator = () => {
                 effort_percentage: allocationEffort
             });
             alert('Allocation successful!');
-            fetchSuggestions(selectedProject.id); // Refresh to see updated availability
+            fetchSuggestions(selectedProject.id);
         } catch (error) {
             alert('Allocation failed: ' + (error.response?.data?.detail || error.message));
         }
     };
 
     return (
-        <div className="space-y-6">
-            <div className="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
-                <div className="md:grid md:grid-cols-3 md:gap-6">
-                    <div className="md:col-span-1">
-                        <h3 className="text-lg font-medium leading-6 text-gray-900">Smart Allocation</h3>
-                        <p className="mt-1 text-sm text-gray-500">Select a project to get AI-powered personnel suggestions.</p>
-                    </div>
-                    <div className="mt-5 md:mt-0 md:col-span-2">
-                        <label className="block text-sm font-medium text-gray-700">Select Project</label>
-                        <select
-                            className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-                            onChange={handleProjectChange}
-                            value={selectedProject?.id || ''}
-                        >
-                            <option value="">-- Select a Project --</option>
-                            {projects.map(p => (
-                                <option key={p.id} value={p.id}>{p.name}</option>
-                            ))}
-                        </select>
-                    </div>
+        <div className="space-y-8 animate-in fade-in duration-500">
+            <div className="flex items-center justify-between">
+                <div>
+                    <h1 className="text-3xl font-bold text-slate-900 tracking-tight flex items-center">
+                        <Sparkles className="w-8 h-8 text-indigo-500 mr-3" />
+                        Smart Allocator
+                    </h1>
+                    <p className="text-slate-500 mt-1">AI-powered personnel matching engine.</p>
                 </div>
             </div>
 
-            {selectedProject && (
-                <div className="bg-white shadow overflow-hidden sm:rounded-md">
-                    <div className="px-4 py-5 border-b border-gray-200 sm:px-6">
-                        <h3 className="text-lg leading-6 font-medium text-gray-900">
-                            Suggestions for {selectedProject.name}
-                        </h3>
-                        <p className="mt-1 max-w-2xl text-sm text-gray-500">
-                            Ranked by skill match, availability, and role fit.
-                        </p>
-                    </div>
-                    {loading ? (
-                        <div className="p-4 text-center text-gray-500">Thinking...</div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {/* Controls */}
+                <div className="lg:col-span-1">
+                    <Card className="sticky top-24 border-indigo-100 shadow-indigo-50">
+                        <CardHeader className="bg-gradient-to-r from-indigo-50 to-white">
+                            <CardTitle className="text-indigo-900">Configuration</CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-6">
+                            <div>
+                                <label className="block text-sm font-medium text-slate-700 mb-2">Select Project</label>
+                                <select
+                                    className="w-full rounded-lg border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                    onChange={handleProjectChange}
+                                    value={selectedProject?.id || ''}
+                                >
+                                    <option value="">-- Choose a Project --</option>
+                                    {projects.map(p => (
+                                        <option key={p.id} value={p.id}>{p.name}</option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            {selectedProject && (
+                                <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                    <h4 className="font-medium text-slate-900 mb-2">Project Requirements</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {selectedProject.required_skills?.map(skill => (
+                                            <Badge key={skill.id} variant="default">{skill.name}</Badge>
+                                        ))}
+                                        {(!selectedProject.required_skills || selectedProject.required_skills.length === 0) && (
+                                            <span className="text-sm text-slate-400 italic">No specific skills listed</span>
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+                        </CardContent>
+                    </Card>
+                </div>
+
+                {/* Suggestions */}
+                <div className="lg:col-span-2 space-y-4">
+                    {!selectedProject ? (
+                        <div className="flex flex-col items-center justify-center h-64 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 text-slate-400">
+                            <BrainCircuit className="w-12 h-12 mb-4 opacity-50" />
+                            <p>Select a project to generate AI suggestions</p>
+                        </div>
+                    ) : loading ? (
+                        <div className="text-center py-12 text-slate-500">
+                            <Sparkles className="w-8 h-8 text-indigo-500 animate-spin mx-auto mb-4" />
+                            Analyzing team skills and availability...
+                        </div>
                     ) : (
-                        <ul className="divide-y divide-gray-200">
-                            {suggestions.map(({ person, score, match_reason }) => (
-                                <li key={person.id} className="hover:bg-gray-50">
-                                    <div className="px-4 py-4 sm:px-6">
+                        <div className="space-y-4">
+                            <h3 className="text-lg font-medium text-slate-900">Top Matches</h3>
+                            {suggestions.map(({ person, score, match_reason }, index) => (
+                                <Card key={person.id} className={`transition-all hover:shadow-md ${index === 0 ? 'border-indigo-200 ring-1 ring-indigo-100' : ''}`}>
+                                    <CardContent className="p-5">
                                         <div className="flex items-center justify-between">
                                             <div className="flex items-center">
-                                                <div className={`flex-shrink-0 h-10 w-10 rounded-full flex items-center justify-center ${score > 50 ? 'bg-green-100' : 'bg-yellow-100'}`}>
-                                                    <span className={`font-bold ${score > 50 ? 'text-green-800' : 'text-yellow-800'}`}>{score}</span>
+                                                <div className={`flex-shrink-0 h-12 w-12 rounded-full flex items-center justify-center font-bold text-lg ${score > 50 ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'
+                                                    }`}>
+                                                    {score}
                                                 </div>
                                                 <div className="ml-4">
-                                                    <div className="text-sm font-medium text-indigo-600">{person.name}</div>
-                                                    <div className="text-sm text-gray-500">{person.role} • {match_reason}</div>
+                                                    <div className="flex items-center">
+                                                        <h3 className="text-lg font-semibold text-slate-900">{person.name}</h3>
+                                                        {index === 0 && <Badge variant="indigo" className="ml-2">Best Match</Badge>}
+                                                    </div>
+                                                    <p className="text-sm text-slate-500">{person.role}</p>
+                                                    <p className="text-xs text-indigo-600 mt-1 flex items-center">
+                                                        <Sparkles className="w-3 h-3 mr-1" />
+                                                        {match_reason}
+                                                    </p>
                                                 </div>
                                             </div>
-                                            <div className="flex items-center space-x-4">
-                                                <div className="text-sm text-gray-500">
-                                                    Avail: <span className={person.availability < 50 ? 'text-red-500' : 'text-green-500'}>{person.availability}%</span>
+
+                                            <div className="flex items-center space-x-6">
+                                                <div className="text-right">
+                                                    <div className="text-xs text-slate-500 uppercase tracking-wider">Availability</div>
+                                                    <div className={`font-bold ${person.availability < 50 ? 'text-rose-600' : 'text-emerald-600'}`}>
+                                                        {person.availability}%
+                                                    </div>
                                                 </div>
-                                                <div className="flex items-center space-x-2">
+
+                                                <div className="flex items-center space-x-2 bg-slate-50 p-1 rounded-lg border border-slate-200">
                                                     <input
                                                         type="number"
                                                         min="10"
                                                         max="100"
                                                         step="10"
-                                                        className="w-16 text-sm border-gray-300 rounded-md"
+                                                        className="w-16 text-sm border-transparent bg-transparent focus:ring-0 text-right"
                                                         value={allocationEffort}
                                                         onChange={(e) => setAllocationEffort(parseInt(e.target.value))}
                                                     />
-                                                    <button
-                                                        onClick={() => handleAllocate(person.id)}
-                                                        className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                                    >
+                                                    <span className="text-xs text-slate-400 mr-2">%</span>
+                                                    <Button size="sm" onClick={() => handleAllocate(person.id)}>
                                                         Allocate
-                                                    </button>
+                                                    </Button>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </CardContent>
+                                </Card>
                             ))}
-                        </ul>
+                        </div>
                     )}
                 </div>
-            )}
+            </div>
         </div>
     );
 };

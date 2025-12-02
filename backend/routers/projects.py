@@ -13,9 +13,11 @@ def create_project(project: Project, session: Session = Depends(get_session)):
     session.refresh(project)
     return project
 
+from sqlalchemy.orm import selectinload
+
 @router.get("/", response_model=List[Project])
 def read_projects(session: Session = Depends(get_session)):
-    projects = session.exec(select(Project)).all()
+    projects = session.exec(select(Project).options(selectinload(Project.required_skills))).all()
     return projects
 
 @router.get("/{project_id}", response_model=Project)

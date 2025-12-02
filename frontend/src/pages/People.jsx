@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import api from '../api';
-import { UserPlus, User } from 'lucide-react';
+import { UserPlus, User, Plus } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/Card';
+import { Button } from '../components/ui/Button';
+import { Badge } from '../components/ui/Badge';
 
 const People = () => {
     const [people, setPeople] = useState([]);
@@ -33,7 +36,7 @@ const People = () => {
         }
     };
 
-    const addSkill = async (personId, skillName) => {
+    const addSkill = async (personId) => {
         const skill = prompt("Enter skill name:");
         if (!skill) return;
         try {
@@ -45,87 +48,103 @@ const People = () => {
     };
 
     return (
-        <div className="space-y-6">
-            <div className="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
-                <div className="md:grid md:grid-cols-3 md:gap-6">
-                    <div className="md:col-span-1">
-                        <h3 className="text-lg font-medium leading-6 text-gray-900">Add Personnel</h3>
-                        <p className="mt-1 text-sm text-gray-500">Register new team members.</p>
-                    </div>
-                    <div className="mt-5 md:mt-0 md:col-span-2">
-                        <form onSubmit={handleSubmit} className="space-y-4">
-                            <div className="grid grid-cols-6 gap-6">
-                                <div className="col-span-6 sm:col-span-3">
-                                    <label className="block text-sm font-medium text-gray-700">Name</label>
+        <div className="space-y-8 animate-in fade-in duration-500">
+            <div className="flex items-center justify-between">
+                <div>
+                    <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Personnel</h1>
+                    <p className="text-slate-500 mt-1">Manage your team members and their skills.</p>
+                </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {/* Add Person Form */}
+                <div className="lg:col-span-1">
+                    <Card className="sticky top-24">
+                        <CardHeader>
+                            <CardTitle className="flex items-center">
+                                <UserPlus className="w-5 h-5 mr-2 text-indigo-600" />
+                                Add New Member
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <form onSubmit={handleSubmit} className="space-y-4">
+                                <div>
+                                    <label className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
                                     <input
                                         type="text"
                                         required
-                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                        className="w-full rounded-lg border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                        placeholder="e.g. Jane Doe"
                                         value={newPerson.name}
                                         onChange={(e) => setNewPerson({ ...newPerson, name: e.target.value })}
                                     />
                                 </div>
-                                <div className="col-span-6 sm:col-span-3">
-                                    <label className="block text-sm font-medium text-gray-700">Role</label>
+                                <div>
+                                    <label className="block text-sm font-medium text-slate-700 mb-1">Role</label>
                                     <input
                                         type="text"
                                         required
-                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                        className="w-full rounded-lg border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                        placeholder="e.g. Senior Developer"
                                         value={newPerson.role}
                                         onChange={(e) => setNewPerson({ ...newPerson, role: e.target.value })}
                                     />
                                 </div>
-                            </div>
-                            <button
-                                type="submit"
-                                className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                            >
-                                <UserPlus className="w-4 h-4 mr-2" />
-                                Add Person
-                            </button>
-                        </form>
-                    </div>
+                                <Button type="submit" className="w-full">
+                                    Add Person
+                                </Button>
+                            </form>
+                        </CardContent>
+                    </Card>
                 </div>
-            </div>
 
-            <div className="bg-white shadow overflow-hidden sm:rounded-md">
-                <ul className="divide-y divide-gray-200">
-                    {people.map((person) => (
-                        <li key={person.id}>
-                            <div className="px-4 py-4 sm:px-6">
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center">
-                                        <div className="flex-shrink-0">
-                                            <span className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center">
-                                                <User className="h-6 w-6 text-gray-500" />
-                                            </span>
+                {/* People List */}
+                <div className="lg:col-span-2 space-y-4">
+                    {loading ? (
+                        <div className="text-center py-12 text-slate-500">Loading personnel...</div>
+                    ) : (
+                        people.map((person) => (
+                            <Card key={person.id} className="hover:border-indigo-200 transition-colors">
+                                <CardContent className="p-5">
+                                    <div className="flex items-start justify-between">
+                                        <div className="flex items-center">
+                                            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
+                                                {person.name.charAt(0)}
+                                            </div>
+                                            <div className="ml-4">
+                                                <h3 className="text-lg font-semibold text-slate-900">{person.name}</h3>
+                                                <p className="text-sm text-slate-500">{person.role}</p>
+                                            </div>
                                         </div>
-                                        <div className="ml-4">
-                                            <div className="text-sm font-medium text-indigo-600">{person.name}</div>
-                                            <div className="text-sm text-gray-500">{person.role}</div>
+                                        <div className="text-right">
+                                            <div className="text-sm font-medium text-slate-500">Availability</div>
+                                            <div className={`text-lg font-bold ${person.availability < 50 ? 'text-rose-600' : 'text-emerald-600'}`}>
+                                                {person.availability}%
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col items-end">
-                                        <div className="text-sm text-gray-500">Availability: {person.availability}%</div>
-                                        <div className="mt-2 flex space-x-2">
+
+                                    <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                                        <div className="flex flex-wrap gap-2">
                                             {person.skills && person.skills.map(skill => (
-                                                <span key={skill.id} className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                                <Badge key={skill.id} variant="indigo">
                                                     {skill.name}
-                                                </span>
+                                                </Badge>
                                             ))}
                                             <button
                                                 onClick={() => addSkill(person.id)}
-                                                className="text-xs text-indigo-600 hover:text-indigo-900"
+                                                className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors border border-dashed border-slate-300"
                                             >
-                                                + Skill
+                                                <Plus className="w-3 h-3 mr-1" />
+                                                Add Skill
                                             </button>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </li>
-                    ))}
-                </ul>
+                                </CardContent>
+                            </Card>
+                        ))
+                    )}
+                </div>
             </div>
         </div>
     );

@@ -13,9 +13,11 @@ def create_person(person: Person, session: Session = Depends(get_session)):
     session.refresh(person)
     return person
 
+from sqlalchemy.orm import selectinload
+
 @router.get("/", response_model=List[Person])
 def read_people(session: Session = Depends(get_session)):
-    people = session.exec(select(Person)).all()
+    people = session.exec(select(Person).options(selectinload(Person.skills))).all()
     return people
 
 @router.get("/{person_id}", response_model=Person)
