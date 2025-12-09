@@ -1,276 +1,215 @@
-2025-12-02 23:11:11,793 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
-2025-12-02 23:11:11,814 INFO o.a.j.JMeter: Loading user properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/user.properties
-2025-12-02 23:11:11,814 INFO o.a.j.JMeter: Loading system properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/system.properties
-2025-12-02 23:11:11,818 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
-2025-12-02 23:11:11,818 INFO o.a.j.JMeter: Version 5.6.3
-2025-12-02 23:11:11,818 INFO o.a.j.JMeter: java.version=21.0.9
-2025-12-02 23:11:11,818 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
-2025-12-02 23:11:11,818 INFO o.a.j.JMeter: os.name=Mac OS X
-2025-12-02 23:11:11,818 INFO o.a.j.JMeter: os.arch=aarch64
-2025-12-02 23:11:11,818 INFO o.a.j.JMeter: os.version=26.1
-2025-12-02 23:11:11,818 INFO o.a.j.JMeter: file.encoding=UTF-8
-2025-12-02 23:11:11,818 INFO o.a.j.JMeter: java.awt.headless=true
-2025-12-02 23:11:11,818 INFO o.a.j.JMeter: Max memory     =1073741824
-2025-12-02 23:11:11,818 INFO o.a.j.JMeter: Available Processors =8
-2025-12-02 23:11:11,826 INFO o.a.j.JMeter: Default Locale=English (EN)
-2025-12-02 23:11:11,826 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
-2025-12-02 23:11:11,826 INFO o.a.j.JMeter: JMeterHome=/opt/homebrew/Cellar/jmeter/5.6.3/libexec
-2025-12-02 23:11:11,826 INFO o.a.j.JMeter: user.dir  =/Users/ponk6745/Desktop/SELab
-2025-12-02 23:11:11,826 INFO o.a.j.JMeter: PWD       =/Users/ponk6745/Desktop/SELab
-2025-12-02 23:11:11,830 INFO o.a.j.JMeter: IP: 10.10.4.208 Name: Shreyaans-MacBook-Air-190.local FullName: 10.10.4.208
-2025-12-02 23:11:11,838 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'/Users/ponk6745/Desktop/SELab/tests/performance/results/dashboard'
-2025-12-02 23:11:11,840 INFO o.a.j.s.FileServer: Default base='/Users/ponk6745/Desktop/SELab'
-2025-12-02 23:11:11,841 INFO o.a.j.s.FileServer: Set new base='/Users/ponk6745/Desktop/SELab/tests/performance'
-2025-12-02 23:11:11,971 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
-2025-12-02 23:11:11,998 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
-2025-12-02 23:11:12,000 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
-2025-12-02 23:11:12,002 INFO o.a.j.s.SaveService: Loading file: tests/performance/test_plan.jmx
-2025-12-02 23:11:12,040 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2025-12-02 23:11:12,040 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2025-12-02 23:11:12,040 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2025-12-02 23:11:12,040 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2025-12-02 23:11:12,041 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
-2025-12-02 23:11:12,041 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
-2025-12-02 23:11:12,056 INFO o.a.j.JMeter: Creating summariser <summary>
-2025-12-02 23:11:12,059 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
-2025-12-02 23:11:12,059 INFO o.a.j.r.d.ReportGenerator: Will generate report at end of test from  results file: tests/performance/results/results.jtl
-2025-12-02 23:11:12,059 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/reportgenerator.properties
-2025-12-02 23:11:12,060 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
-2025-12-02 23:11:12,063 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.temp_dir' not found, using default value 'temp' instead.
-2025-12-02 23:11:12,064 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
-2025-12-02 23:11:12,064 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction is empty, not APDEX per transaction customization
-2025-12-02 23:11:12,064 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
-2025-12-02 23:11:12,064 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
-2025-12-02 23:11:12,064 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
-2025-12-02 23:11:12,064 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
-2025-12-02 23:11:12,064 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
-2025-12-02 23:11:12,065 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
-2025-12-02 23:11:12,067 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.totalTPS.exclude_controllers' not found, using default value 'false' instead.
-2025-12-02 23:11:12,067 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
-2025-12-02 23:11:12,067 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
-2025-12-02 23:11:12,067 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
-2025-12-02 23:11:12,067 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
-2025-12-02 23:11:12,067 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
-2025-12-02 23:11:12,068 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
-2025-12-02 23:11:12,068 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
-2025-12-02 23:11:12,068 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
-2025-12-02 23:11:12,068 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
-2025-12-02 23:11:12,068 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.filters_only_sample_series' not found, using default value 'true' instead.
-2025-12-02 23:11:12,068 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.series_filter' not found, using default value '' instead.
-2025-12-02 23:11:12,068 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.show_controllers_only' not found, using default value 'false' instead.
-2025-12-02 23:11:12,068 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
-2025-12-02 23:11:12,068 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
-2025-12-02 23:11:12,069 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
-2025-12-02 23:11:12,077 INFO o.a.j.e.StandardJMeterEngine: Running the test!
-2025-12-02 23:11:12,078 INFO o.a.j.s.SampleEvent: List of sample_variables: []
-2025-12-02 23:11:12,078 INFO o.a.j.s.SampleEvent: List of sample_variables: []
-2025-12-02 23:11:12,081 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
-2025-12-02 23:11:12,081 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
-2025-12-02 23:11:12,118 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.functions.Function], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
-2025-12-02 23:11:12,181 INFO o.a.j.JMeter: Running test (1764697272181)
-2025-12-02 23:11:12,195 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : API Load Test
-2025-12-02 23:11:12,195 INFO o.a.j.e.StandardJMeterEngine: Starting 50 threads for group API Load Test.
-2025-12-02 23:11:12,195 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
-2025-12-02 23:11:12,195 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=50 ramp-up=10 delayedStart=false
-2025-12-02 23:11:12,199 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-1
-2025-12-02 23:11:12,219 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = Shreyaans-MacBook-Air-190.local
-2025-12-02 23:11:12,240 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
-2025-12-02 23:11:12,240 INFO o.a.j.t.ThreadGroup: Started thread group number 1
-2025-12-02 23:11:12,240 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
-2025-12-02 23:11:12,241 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
-2025-12-02 23:11:12,241 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
-2025-12-02 23:11:12,242 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
-2025-12-02 23:11:12,242 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
-2025-12-02 23:11:12,352 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-1
-2025-12-02 23:11:12,352 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-1
-2025-12-02 23:11:12,401 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-2
-2025-12-02 23:11:12,434 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-2
-2025-12-02 23:11:12,434 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-2
-2025-12-02 23:11:12,596 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-3
-2025-12-02 23:11:12,631 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-3
-2025-12-02 23:11:12,631 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-3
-2025-12-02 23:11:12,800 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-4
-2025-12-02 23:11:12,842 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-4
-2025-12-02 23:11:12,842 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-4
-2025-12-02 23:11:13,002 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-5
-2025-12-02 23:11:13,032 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-5
-2025-12-02 23:11:13,032 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-5
-2025-12-02 23:11:13,200 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-6
-2025-12-02 23:11:13,233 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-6
-2025-12-02 23:11:13,233 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-6
-2025-12-02 23:11:13,401 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-7
-2025-12-02 23:11:13,438 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-7
-2025-12-02 23:11:13,438 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-7
-2025-12-02 23:11:13,602 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-8
-2025-12-02 23:11:13,629 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-8
-2025-12-02 23:11:13,629 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-8
-2025-12-02 23:11:13,801 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-9
-2025-12-02 23:11:13,844 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-9
-2025-12-02 23:11:13,845 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-9
-2025-12-02 23:11:13,996 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-10
-2025-12-02 23:11:14,101 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-10
-2025-12-02 23:11:14,101 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-10
-2025-12-02 23:11:14,195 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-11
-2025-12-02 23:11:14,222 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-11
-2025-12-02 23:11:14,222 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-11
-2025-12-02 23:11:14,402 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-12
-2025-12-02 23:11:14,428 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-12
-2025-12-02 23:11:14,428 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-12
-2025-12-02 23:11:14,596 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-13
-2025-12-02 23:11:14,632 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-13
-2025-12-02 23:11:14,632 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-13
-2025-12-02 23:11:14,801 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-14
-2025-12-02 23:11:14,883 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-14
-2025-12-02 23:11:14,883 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-14
-2025-12-02 23:11:15,000 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-15
-2025-12-02 23:11:15,033 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-15
-2025-12-02 23:11:15,034 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-15
-2025-12-02 23:11:15,198 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-16
-2025-12-02 23:11:15,306 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-16
-2025-12-02 23:11:15,306 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-16
-2025-12-02 23:11:15,399 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-17
-2025-12-02 23:11:15,422 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-17
-2025-12-02 23:11:15,422 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-17
-2025-12-02 23:11:15,598 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-18
-2025-12-02 23:11:15,665 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-18
-2025-12-02 23:11:15,665 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-18
-2025-12-02 23:11:15,802 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-19
-2025-12-02 23:11:15,834 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-19
-2025-12-02 23:11:15,834 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-19
-2025-12-02 23:11:16,003 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-20
-2025-12-02 23:11:16,033 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-20
-2025-12-02 23:11:16,033 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-20
-2025-12-02 23:11:16,202 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-21
-2025-12-02 23:11:16,260 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-21
-2025-12-02 23:11:16,260 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-21
-2025-12-02 23:11:16,397 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-22
-2025-12-02 23:11:16,472 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-22
-2025-12-02 23:11:16,472 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-22
-2025-12-02 23:11:16,596 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-23
-2025-12-02 23:11:16,627 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-23
-2025-12-02 23:11:16,627 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-23
-2025-12-02 23:11:16,801 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-24
-2025-12-02 23:11:16,831 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-24
-2025-12-02 23:11:16,831 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-24
-2025-12-02 23:11:16,997 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-25
-2025-12-02 23:11:17,022 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-25
-2025-12-02 23:11:17,023 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-25
-2025-12-02 23:11:17,201 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-26
-2025-12-02 23:11:17,229 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-26
-2025-12-02 23:11:17,229 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-26
-2025-12-02 23:11:17,402 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-27
-2025-12-02 23:11:17,521 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-27
-2025-12-02 23:11:17,521 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-27
-2025-12-02 23:11:17,597 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-28
-2025-12-02 23:11:17,692 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-28
-2025-12-02 23:11:17,693 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-28
-2025-12-02 23:11:17,800 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-29
-2025-12-02 23:11:17,831 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-29
-2025-12-02 23:11:17,831 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-29
-2025-12-02 23:11:17,996 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-30
-2025-12-02 23:11:18,115 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-30
-2025-12-02 23:11:18,115 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-30
-2025-12-02 23:11:18,202 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-31
-2025-12-02 23:11:18,236 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-31
-2025-12-02 23:11:18,236 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-31
-2025-12-02 23:11:18,397 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-32
-2025-12-02 23:11:18,476 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-32
-2025-12-02 23:11:18,476 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-32
-2025-12-02 23:11:18,597 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-33
-2025-12-02 23:11:18,634 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-33
-2025-12-02 23:11:18,634 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-33
-2025-12-02 23:11:18,797 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-34
-2025-12-02 23:11:18,868 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-34
-2025-12-02 23:11:18,868 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-34
-2025-12-02 23:11:18,996 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-35
-2025-12-02 23:11:19,026 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-35
-2025-12-02 23:11:19,026 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-35
-2025-12-02 23:11:19,200 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-36
-2025-12-02 23:11:19,297 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-36
-2025-12-02 23:11:19,297 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-36
-2025-12-02 23:11:19,400 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-37
-2025-12-02 23:11:19,433 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-37
-2025-12-02 23:11:19,433 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-37
-2025-12-02 23:11:19,603 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-38
-2025-12-02 23:11:19,636 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-38
-2025-12-02 23:11:19,636 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-38
-2025-12-02 23:11:19,812 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-39
-2025-12-02 23:11:19,843 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-39
-2025-12-02 23:11:19,843 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-39
-2025-12-02 23:11:20,004 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-40
-2025-12-02 23:11:20,028 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-40
-2025-12-02 23:11:20,028 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-40
-2025-12-02 23:11:20,201 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-41
-2025-12-02 23:11:20,225 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-41
-2025-12-02 23:11:20,225 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-41
-2025-12-02 23:11:20,401 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-42
-2025-12-02 23:11:20,449 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-42
-2025-12-02 23:11:20,449 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-42
-2025-12-02 23:11:20,601 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-43
-2025-12-02 23:11:20,628 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-43
-2025-12-02 23:11:20,628 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-43
-2025-12-02 23:11:20,800 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-44
-2025-12-02 23:11:20,821 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-44
-2025-12-02 23:11:20,821 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-44
-2025-12-02 23:11:21,004 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-45
-2025-12-02 23:11:21,029 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-45
-2025-12-02 23:11:21,029 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-45
-2025-12-02 23:11:21,196 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-46
-2025-12-02 23:11:21,234 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-46
-2025-12-02 23:11:21,234 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-46
-2025-12-02 23:11:21,400 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-47
-2025-12-02 23:11:21,430 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-47
-2025-12-02 23:11:21,430 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-47
-2025-12-02 23:11:21,600 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-48
-2025-12-02 23:11:21,626 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-48
-2025-12-02 23:11:21,626 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-48
-2025-12-02 23:11:21,801 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-49
-2025-12-02 23:11:21,825 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-49
-2025-12-02 23:11:21,825 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-49
-2025-12-02 23:11:22,001 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-50
-2025-12-02 23:11:22,102 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-50
-2025-12-02 23:11:22,102 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-50
-2025-12-02 23:11:22,102 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
-2025-12-02 23:11:22,107 INFO o.a.j.r.Summariser: summary =   1000 in 00:00:10 =  100.8/s Avg:     2 Min:     0 Max:    52 Err:     0 (0.00%)
-2025-12-02 23:11:22,108 INFO o.a.j.JMeter: Generating Dashboard
-2025-12-02 23:11:22,108 INFO o.a.j.r.d.ReportGenerator: Flushing result collector before report Generation
-2025-12-02 23:11:22,116 INFO o.a.j.r.p.NormalizerSampleConsumer: Using format, 'ms', to parse timeStamp field
-2025-12-02 23:11:22,176 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): beginDate produced 0 samples
-2025-12-02 23:11:22,176 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): endDate produced 0 samples
-2025-12-02 23:11:22,181 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ApdexSummaryConsumer#stopProducing(): apdexSummary produced 0 samples
-2025-12-02 23:11:22,181 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.RequestsSummaryConsumer#stopProducing(): requestsSummary produced 0 samples
-2025-12-02 23:11:22,184 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.StatisticsSummaryConsumer#stopProducing(): statisticsSummary produced 0 samples
-2025-12-02 23:11:22,186 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.Top5ErrorsBySamplerConsumer#stopProducing(): top5ErrorsBySampler produced 0 samples
-2025-12-02 23:11:22,186 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ErrorsSummaryConsumer#stopProducing(): errorsSummary produced 0 samples
-2025-12-02 23:11:22,186 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.HitsPerSecondGraphConsumer#stopProducing(): hitsPerSecond produced 0 samples
-2025-12-02 23:11:22,202 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyVSRequestGraphConsumer#stopProducing(): latencyVsRequest produced 0 samples
-2025-12-02 23:11:22,202 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.SyntheticResponseTimeDistributionGraphConsumer#stopProducing(): syntheticResponseTimeDistribution produced 0 samples
-2025-12-02 23:11:22,203 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.BytesThroughputGraphConsumer#stopProducing(): bytesThroughputOverTime produced 0 samples
-2025-12-02 23:11:22,203 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.CodesPerSecondGraphConsumer#stopProducing(): codesPerSecond produced 0 samples
-2025-12-02 23:11:22,210 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeVSRequestGraphConsumer#stopProducing(): responseTimeVsRequest produced 0 samples
-2025-12-02 23:11:22,210 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): startIntervalControlerFilter produced 7000 samples
-2025-12-02 23:11:22,210 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TotalTPSGraphConsumer#stopProducing(): totalTPS produced 0 samples
-2025-12-02 23:11:22,211 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ActiveThreadsGraphConsumer#stopProducing(): activeThreadsOverTime produced 0 samples
-2025-12-02 23:11:22,211 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TimeVSThreadGraphConsumer#stopProducing(): timeVsThreads produced 0 samples
-2025-12-02 23:11:22,211 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeDistributionGraphConsumer#stopProducing(): responseTimeDistribution produced 0 samples
-2025-12-02 23:11:22,211 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TransactionsPerSecondGraphConsumer#stopProducing(): transactionsPerSecond produced 0 samples
-2025-12-02 23:11:22,211 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesGraphConsumer#stopProducing(): responseTimePercentiles produced 0 samples
-2025-12-02 23:11:22,212 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesOverTimeGraphConsumer#stopProducing(): responseTimePercentilesOverTime produced 0 samples
-2025-12-02 23:11:22,212 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeOverTimeGraphConsumer#stopProducing(): responseTimesOverTime produced 0 samples
-2025-12-02 23:11:22,212 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ConnectTimeOverTimeGraphConsumer#stopProducing(): connectTimeOverTime produced 0 samples
-2025-12-02 23:11:22,212 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyOverTimeGraphConsumer#stopProducing(): latenciesOverTime produced 0 samples
-2025-12-02 23:11:22,212 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): nameFilter produced 15000 samples
-2025-12-02 23:11:22,212 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): dateRangeFilter produced 3000 samples
-2025-12-02 23:11:22,212 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.NormalizerSampleConsumer#stopProducing(): normalizer produced 1000 samples
-2025-12-02 23:11:22,212 INFO o.a.j.r.p.CsvFileSampleSource: produce(): 1000 samples produced in 84ms on channel 0
-2025-12-02 23:11:22,213 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'json' of className:'org.apache.jmeter.report.dashboard.JsonExporter'
-2025-12-02 23:11:22,257 INFO o.a.j.r.d.JsonExporter: Found data for consumer statisticsSummary in context
-2025-12-02 23:11:22,257 INFO o.a.j.r.d.JsonExporter: Creating statistics for overall
-2025-12-02 23:11:22,257 INFO o.a.j.r.d.JsonExporter: Creating statistics for other transactions
-2025-12-02 23:11:22,258 INFO o.a.j.r.d.JsonExporter: Checking output folder
-2025-12-02 23:11:22,258 INFO o.a.j.r.d.JsonExporter: Writing statistics JSON to /Users/ponk6745/Desktop/SELab/tests/performance/results/dashboard/statistics.json
-2025-12-02 23:11:22,286 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'html' of className:'org.apache.jmeter.report.dashboard.HtmlTemplateExporter'
-2025-12-02 23:11:22,289 INFO o.a.j.r.d.HtmlTemplateExporter: Will generate dashboard in folder: /Users/ponk6745/Desktop/SELab/tests/performance/results/dashboard
-2025-12-02 23:11:22,352 INFO o.a.j.r.d.HtmlTemplateExporter: Report will be generated in: /Users/ponk6745/Desktop/SELab/tests/performance/results/dashboard, creating folder structure
-2025-12-02 23:11:22,354 INFO o.a.j.r.d.TemplateVisitor: Copying folder from '/opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/report-template' to '/Users/ponk6745/Desktop/SELab/tests/performance/results/dashboard', got message: /Users/ponk6745/Desktop/SELab/tests/performance/results/dashboard, found non empty folder with following content [/Users/ponk6745/Desktop/SELab/tests/performance/results/dashboard/statistics.json], will be ignored
-2025-12-02 23:11:22,509 INFO o.a.j.JMeter: Dashboard generated
+2025-12-09 23:15:37,110 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2025-12-09 23:15:37,123 INFO o.a.j.JMeter: Loading user properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/user.properties
+2025-12-09 23:15:37,123 INFO o.a.j.JMeter: Loading system properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/system.properties
+2025-12-09 23:15:37,127 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2025-12-09 23:15:37,127 INFO o.a.j.JMeter: Version 5.6.3
+2025-12-09 23:15:37,127 INFO o.a.j.JMeter: java.version=21.0.9
+2025-12-09 23:15:37,127 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2025-12-09 23:15:37,127 INFO o.a.j.JMeter: os.name=Mac OS X
+2025-12-09 23:15:37,127 INFO o.a.j.JMeter: os.arch=aarch64
+2025-12-09 23:15:37,127 INFO o.a.j.JMeter: os.version=26.1
+2025-12-09 23:15:37,127 INFO o.a.j.JMeter: file.encoding=UTF-8
+2025-12-09 23:15:37,127 INFO o.a.j.JMeter: java.awt.headless=null
+2025-12-09 23:15:37,127 INFO o.a.j.JMeter: Max memory     =1073741824
+2025-12-09 23:15:37,127 INFO o.a.j.JMeter: Available Processors =8
+2025-12-09 23:15:37,134 INFO o.a.j.JMeter: Default Locale=English (EN)
+2025-12-09 23:15:37,134 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2025-12-09 23:15:37,134 INFO o.a.j.JMeter: JMeterHome=/opt/homebrew/Cellar/jmeter/5.6.3/libexec
+2025-12-09 23:15:37,134 INFO o.a.j.JMeter: user.dir  =/Users/ponk6745/Desktop/SELab
+2025-12-09 23:15:37,135 INFO o.a.j.JMeter: PWD       =/Users/ponk6745/Desktop/SELab
+2025-12-09 23:15:37,162 INFO o.a.j.JMeter: IP: 10.10.10.153 Name: Shreyaans-MacBook-Air-190.local FullName: 10.10.10.153
+2025-12-09 23:15:37,170 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2025-12-09 23:15:38,562 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
+2025-12-09 23:15:40,939 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.action.Command], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-12-09 23:15:41,065 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.plugin.MenuCreator], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-12-09 23:15:41,163 INFO o.j.r.JARSourceHTTP: Found cached repo
+2025-12-09 23:15:41,336 INFO o.j.r.PluginManager: Plugins Status: [jpgc-plugins-manager=1.9, jmeter-core=5.6.3, jmeter-ftp=5.6.3, jmeter-http=5.6.3, jmeter-jdbc=5.6.3, jmeter-jms=5.6.3, jmeter-junit=5.6.3, jmeter-java=5.6.3, jmeter-ldap=5.6.3, jmeter-mail=5.6.3, jmeter-mongodb=5.6.3, jmeter-native=5.6.3, jmeter-tcp=5.6.3, jmeter-components=5.6.3]
+2025-12-09 23:15:41,337 INFO o.j.r.PluginManagerMenuItem: Plugins Manager has upgrades: [jpgc-plugins-manager]
+2025-12-09 23:15:42,569 INFO o.a.j.JMeterGuiLauncher: Loading file: tests/performance/test_plan.jmx
+2025-12-09 23:15:42,571 INFO o.a.j.s.FileServer: Default base='/Users/ponk6745/Desktop/SELab'
+2025-12-09 23:15:42,572 INFO o.a.j.s.FileServer: Set new base='/Users/ponk6745/Desktop/SELab/tests/performance'
+2025-12-09 23:15:42,800 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2025-12-09 23:15:42,807 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2025-12-09 23:15:42,808 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2025-12-09 23:15:42,809 INFO o.a.j.s.SaveService: Loading file: tests/performance/test_plan.jmx
+2025-12-09 23:15:42,875 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-12-09 23:15:42,875 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-12-09 23:15:42,875 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-12-09 23:15:42,875 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2025-12-09 23:15:42,875 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2025-12-09 23:15:42,875 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2025-12-09 23:15:42,966 INFO o.a.j.s.FileServer: Set new base='/Users/ponk6745/Desktop/SELab/tests/performance'
+2025-12-09 23:15:43,135 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2025-12-09 23:15:43,135 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2025-12-09 23:15:43,135 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2025-12-09 23:15:43,135 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2025-12-09 23:15:43,200 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.visualizers.ResultRenderer], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-12-09 23:15:43,212 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.visualizers.RequestView], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-12-09 23:20:18,303 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2025-12-09 23:20:18,305 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2025-12-09 23:20:18,305 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2025-12-09 23:20:18,306 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2025-12-09 23:20:18,306 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2025-12-09 23:20:18,346 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.functions.Function], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2025-12-09 23:20:18,353 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2025-12-09 23:20:18,389 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : API Load Test
+2025-12-09 23:20:18,389 INFO o.a.j.e.StandardJMeterEngine: Starting 50 threads for group API Load Test.
+2025-12-09 23:20:18,389 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2025-12-09 23:20:18,389 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=50 ramp-up=10 delayedStart=false
+2025-12-09 23:20:18,393 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-1
+2025-12-09 23:20:18,407 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = Shreyaans-MacBook-Air-190.local
+2025-12-09 23:20:18,412 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2025-12-09 23:20:18,412 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2025-12-09 23:20:18,414 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2025-12-09 23:20:18,596 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-2
+2025-12-09 23:20:18,621 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-1
+2025-12-09 23:20:18,622 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-1
+2025-12-09 23:20:18,706 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-2
+2025-12-09 23:20:18,707 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-2
+2025-12-09 23:20:18,795 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-3
+2025-12-09 23:20:18,916 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-3
+2025-12-09 23:20:18,916 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-3
+2025-12-09 23:20:18,990 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-4
+2025-12-09 23:20:19,086 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-4
+2025-12-09 23:20:19,087 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-4
+2025-12-09 23:20:19,191 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-5
+2025-12-09 23:20:19,269 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-5
+2025-12-09 23:20:19,270 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-5
+2025-12-09 23:20:19,390 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-6
+2025-12-09 23:20:19,476 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-6
+2025-12-09 23:20:19,476 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-6
+2025-12-09 23:20:19,594 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-7
+2025-12-09 23:20:19,750 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-7
+2025-12-09 23:20:19,750 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-7
+2025-12-09 23:20:19,794 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-8
+2025-12-09 23:20:19,897 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-8
+2025-12-09 23:20:19,897 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-8
+2025-12-09 23:20:19,993 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-9
+2025-12-09 23:20:20,073 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-9
+2025-12-09 23:20:20,073 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-9
+2025-12-09 23:20:20,193 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-10
+2025-12-09 23:20:20,306 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-10
+2025-12-09 23:20:20,307 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-10
+2025-12-09 23:20:20,395 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-11
+2025-12-09 23:20:20,506 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-11
+2025-12-09 23:20:20,506 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-11
+2025-12-09 23:20:20,589 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-12
+2025-12-09 23:20:20,671 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-12
+2025-12-09 23:20:20,671 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-12
+2025-12-09 23:20:20,794 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-13
+2025-12-09 23:20:20,896 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-13
+2025-12-09 23:20:20,896 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-13
+2025-12-09 23:20:20,996 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-14
+2025-12-09 23:20:21,109 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-14
+2025-12-09 23:20:21,109 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-14
+2025-12-09 23:20:21,196 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-15
+2025-12-09 23:20:21,368 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-15
+2025-12-09 23:20:21,368 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-15
+2025-12-09 23:20:21,389 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-16
+2025-12-09 23:20:21,547 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-16
+2025-12-09 23:20:21,547 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-16
+2025-12-09 23:20:21,590 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-17
+2025-12-09 23:20:21,685 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-17
+2025-12-09 23:20:21,685 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-17
+2025-12-09 23:20:21,793 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-18
+2025-12-09 23:20:21,886 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-18
+2025-12-09 23:20:21,886 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-18
+2025-12-09 23:20:21,995 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-19
+2025-12-09 23:20:22,188 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-19
+2025-12-09 23:20:22,189 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-19
+2025-12-09 23:20:22,194 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-20
+2025-12-09 23:20:22,281 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-20
+2025-12-09 23:20:22,281 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-20
+2025-12-09 23:20:22,394 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-21
+2025-12-09 23:20:22,509 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-21
+2025-12-09 23:20:22,509 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-21
+2025-12-09 23:20:22,596 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-22
+2025-12-09 23:20:22,669 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-22
+2025-12-09 23:20:22,669 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-22
+2025-12-09 23:20:22,791 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-23
+2025-12-09 23:20:22,955 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-23
+2025-12-09 23:20:22,955 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-23
+2025-12-09 23:20:22,995 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-24
+2025-12-09 23:20:23,075 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-24
+2025-12-09 23:20:23,075 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-24
+2025-12-09 23:20:23,193 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-25
+2025-12-09 23:20:23,284 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-25
+2025-12-09 23:20:23,284 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-25
+2025-12-09 23:20:23,392 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-26
+2025-12-09 23:20:23,469 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-26
+2025-12-09 23:20:23,469 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-26
+2025-12-09 23:20:23,596 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-27
+2025-12-09 23:20:23,686 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-27
+2025-12-09 23:20:23,687 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-27
+2025-12-09 23:20:23,793 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-28
+2025-12-09 23:20:23,897 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-28
+2025-12-09 23:20:23,897 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-28
+2025-12-09 23:20:23,995 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-29
+2025-12-09 23:20:24,070 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-29
+2025-12-09 23:20:24,070 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-29
+2025-12-09 23:20:24,195 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-30
+2025-12-09 23:20:24,286 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-30
+2025-12-09 23:20:24,287 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-30
+2025-12-09 23:20:24,396 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-31
+2025-12-09 23:20:24,469 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-31
+2025-12-09 23:20:24,469 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-31
+2025-12-09 23:20:24,593 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-32
+2025-12-09 23:20:24,663 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-32
+2025-12-09 23:20:24,663 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-32
+2025-12-09 23:20:24,795 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-33
+2025-12-09 23:20:24,859 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-33
+2025-12-09 23:20:24,859 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-33
+2025-12-09 23:20:24,992 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-34
+2025-12-09 23:20:25,067 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-34
+2025-12-09 23:20:25,067 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-34
+2025-12-09 23:20:25,194 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-35
+2025-12-09 23:20:25,274 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-35
+2025-12-09 23:20:25,275 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-35
+2025-12-09 23:20:25,392 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-36
+2025-12-09 23:20:25,521 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-36
+2025-12-09 23:20:25,522 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-36
+2025-12-09 23:20:25,594 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-37
+2025-12-09 23:20:25,736 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-37
+2025-12-09 23:20:25,737 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-37
+2025-12-09 23:20:25,796 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-38
+2025-12-09 23:20:26,004 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-39
+2025-12-09 23:20:26,191 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-40
+2025-12-09 23:20:26,385 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-38
+2025-12-09 23:20:26,385 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-38
+2025-12-09 23:20:26,391 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-41
+2025-12-09 23:20:26,494 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-39
+2025-12-09 23:20:26,494 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-39
+2025-12-09 23:20:26,568 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-40
+2025-12-09 23:20:26,568 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-40
+2025-12-09 23:20:26,590 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-42
+2025-12-09 23:20:26,631 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-41
+2025-12-09 23:20:26,631 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-41
+2025-12-09 23:20:26,734 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-42
+2025-12-09 23:20:26,734 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-42
+2025-12-09 23:20:26,792 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-43
+2025-12-09 23:20:26,990 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-43
+2025-12-09 23:20:26,990 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-43
+2025-12-09 23:20:26,992 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-44
+2025-12-09 23:20:27,094 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-44
+2025-12-09 23:20:27,095 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-44
+2025-12-09 23:20:27,192 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-45
+2025-12-09 23:20:27,333 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-45
+2025-12-09 23:20:27,334 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-45
+2025-12-09 23:20:27,393 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-46
+2025-12-09 23:20:27,532 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-46
+2025-12-09 23:20:27,533 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-46
+2025-12-09 23:20:27,594 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-47
+2025-12-09 23:20:27,699 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-47
+2025-12-09 23:20:27,699 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-47
+2025-12-09 23:20:27,796 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-48
+2025-12-09 23:20:27,895 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-48
+2025-12-09 23:20:27,895 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-48
+2025-12-09 23:20:27,995 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-49
+2025-12-09 23:20:28,059 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-49
+2025-12-09 23:20:28,059 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-49
+2025-12-09 23:20:28,192 INFO o.a.j.t.JMeterThread: Thread started: API Load Test 1-50
+2025-12-09 23:20:28,289 INFO o.a.j.t.JMeterThread: Thread is done: API Load Test 1-50
+2025-12-09 23:20:28,289 INFO o.a.j.t.JMeterThread: Thread finished: API Load Test 1-50
+2025-12-09 23:20:28,289 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2025-12-09 23:20:28,289 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2025-12-09 23:21:29,608 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.visualizers.RequestView], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning

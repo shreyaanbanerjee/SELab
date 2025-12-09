@@ -3,6 +3,7 @@
 echo "🚀 Running JMeter Load Test..."
 
 # Create results directory
+rm -rf tests/performance/results
 mkdir -p tests/performance/results
 
 # Run JMeter in non-GUI mode

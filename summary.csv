@@ -1,0 +1,5 @@
+Label,# Samples,Average,Min,Max,Std. Dev.,Error %,Throughput,Received KB/sec,Sent KB/sec,Avg. Bytes
+Get People,500,3,1,73,4.76,0.000%,50.77689,15.02,7.69,303.0
+Get Projects,500,3,1,30,3.26,0.000%,51.15613,15.14,7.84,303.0
+Create Allocation,500,5,2,164,8.93,0.000%,51.17184,9.30,12.49,186.0
+TOTAL,1500,4,1,164,6.24,0.000%,152.26881,39.26,27.86,264.0
