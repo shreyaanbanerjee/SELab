@@ -54,10 +54,11 @@ const People = () => {
         const skill = prompt("Enter skill name:");
         if (!skill) return;
         try {
-            await api.post(`/people/${personId}/skills?skill_name=${skill}`);
+            await api.post(`/people/${personId}/skills`, {}, { params: { skill_name: skill } });
             toast.success('Skill added');
             fetchPeople();
         } catch (error) {
+            console.error('Skill error:', error);
             toast.error('Failed to add skill');
         }
     };
